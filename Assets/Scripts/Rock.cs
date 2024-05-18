@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
-    public float amplitude = 0.5f;  // Height of the floating effect
+    public float amplitude = 1f;  // Height of the floating effect
     public float frequency = 2f;    // Speed of the floating effect
 
 
