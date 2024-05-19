@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8597541228155285118}
   - component: {fileID: 5494067868522559995}
   - component: {fileID: -7413437497860648606}
-  - component: {fileID: -8356885329225105269}
   m_Layer: 0
   m_Name: Rock1
   m_TagString: Rock
@@ -34,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1500985981038972154
 MeshFilter:
@@ -134,17 +133,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &-8356885329225105269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225166558537567163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8cdd182f0bfa2640b8a49e406303706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sinkingSpeed: 1.5
-  delay: 2
