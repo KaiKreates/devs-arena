@@ -8,6 +8,8 @@ public class RockMove : MonoBehaviour
     public float horizontalFrequency = 2f;    // Speed of the oscillation effect
 
     private Vector3 startPos;
+    private float yOffset;
+    private float xOffset;
 
     void Start()
     {
@@ -17,12 +19,30 @@ public class RockMove : MonoBehaviour
     void Update()
     {
         // Calculate vertical floating effect
-        float yOffset = Mathf.Sin(Time.time * verticalFrequency) * verticalAmplitude;
+        yOffset = Mathf.Sin(Time.time * verticalFrequency) * verticalAmplitude;
 
         // Calculate horizontal oscillation effect
-        float xOffset = Mathf.Sin(Time.time * horizontalFrequency) * horizontalAmplitude;
+        xOffset = Mathf.Sin(Time.time * horizontalFrequency) * horizontalAmplitude;
 
         // Apply both effects to the rock's position
         transform.position = startPos + new Vector3(xOffset, yOffset, 0);
+
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.parent = null;
+        }
     }
 }

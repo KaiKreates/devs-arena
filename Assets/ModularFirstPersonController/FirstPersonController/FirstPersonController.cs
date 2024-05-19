@@ -447,7 +447,7 @@ public class FirstPersonController : MonoBehaviour
     {
         Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
-        float distance = .75f;
+        float distance = 1.25f;
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
         {
