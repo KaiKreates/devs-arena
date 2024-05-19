@@ -21,12 +21,13 @@ public class Timer : MonoBehaviour
             // Calculate the elapsed time since the timer started
             float elapsedTime = Time.time - startTime;
 
-            // Calculate minutes and seconds
+            // Calculate minutes, seconds, and milliseconds
             int minutes = (int)(elapsedTime / 60);
             int seconds = (int)(elapsedTime % 60);
+            int milliseconds = (int)((elapsedTime * 1000) % 1000); // Adjusted for four-digit milliseconds
 
             // Update the timer text
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = string.Format("{0:00}:{1:00}:{2:0000}", minutes, seconds, milliseconds);
         }
     }
 
