@@ -7,12 +7,17 @@ public class SharkController : MonoBehaviour
     private Vector3 playerPos;
     public Transform player;
     public GameObject fractureRockPrefab;
+    public GameOver gameOverManager;
 
     public float slowDuration;
     public float swimSpeed;
 
     public void Start()
     {
+        if (gameOverManager == null)
+        {
+            gameOverManager = FindObjectOfType<GameOver>();
+        }
 
     }
 
@@ -43,7 +48,10 @@ public class SharkController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //gameover
-            Debug.Log("GameOver");
+            Debug.Log("Game Over");
+            gameOverManager.ShowGameOverScreen();
+
+
         }
     }
 

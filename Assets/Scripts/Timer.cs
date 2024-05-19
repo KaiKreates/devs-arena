@@ -47,5 +47,6 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         startTime = Time.time;
+       
     }
 }
