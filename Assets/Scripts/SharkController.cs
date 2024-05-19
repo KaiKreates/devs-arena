@@ -6,14 +6,10 @@ public class SharkController : MonoBehaviour
 {
     private Vector3 playerPos;
     public Transform player;
+    public GameObject fractureRockPrefab;
 
-    private float cooldown = 0;
-    public float cooldownDuration;
+    public float slowDuration;
     public float swimSpeed;
-    public float slowSpeed;
-
-    public LayerMask whatIsRock;
-    public LayerMask whatIsPlayer;
 
     public void Start()
     {
@@ -30,28 +26,31 @@ public class SharkController : MonoBehaviour
 
         //Move Forward
         transform.position += transform.forward * swimSpeed * Time.deltaTime;
+    }
 
-        float delta = 5;
-        for (int i = -3; i <= 3; i++)
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Rock"))
         {
-            //Wall Detection
-            var dir = Quaternion.Euler(0, i * delta, 0) * transform.forward;
-            Debug.DrawRay(transform.position, dir * 8, Color.green);
-
-            if (Physics.Raycast(transform.position, dir, 8, whatIsRock))
-            {
-                swimSpeed = slowSpeed;
-                cooldown = Time.time + cooldownDuration;
-            }
+            //Break Rock
+            Destroy(collision.gameObject);
+            Instantiate(fractureRockPrefab, collision.transform.position, Quaternion.identity);
+            //slow shark
+            swimSpeed = 2;
+            StartCoroutine(SlowShark());
         }
 
-        if(cooldown < Time.time)
-            //revert back to swimSpeed;
-
-        //Detect Player
-        if (Physics.Raycast(transform.position, transform.forward, 3, whatIsPlayer))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //Gameover
+            //gameover
+            Debug.Log("GameOver");
         }
+    }
+
+    IEnumerator SlowShark()
+    {
+        yield return new WaitForSeconds(slowDuration);
+
+        swimSpeed = 5;
     }
 }

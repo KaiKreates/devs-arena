@@ -50,6 +50,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DepthFade: 1
+    - _FoamDepth: 1
+    - _FoamNoiseScale: 10
+    - _FoamRippleSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RippleDensity: 100
@@ -57,5 +61,8 @@ Material:
     - _Smoothness: 0
     m_Colors:
     - _BaseColor: {r: 0.6792453, g: 0.2930078, b: 0, a: 0}
+    - _DeepColor: {r: 1, g: 0.4361801, b: 0, a: 0}
+    - _FoamColor: {r: 0.9528302, g: 0.4346138, b: 0.112362035, a: 0}
     - _RippleColor: {r: 1, g: 0.3834194, b: 0, a: 0}
+    - _ShallowColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
