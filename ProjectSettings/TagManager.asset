@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rock
   - Lava
+  - LevelCompletedUI
   layers:
   - Default
   - TransparentFX
