@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7957146875620866685}
   - component: {fileID: 183460178496012773}
   - component: {fileID: 1832653957346468725}
+  - component: {fileID: 6681918675172158038}
   m_Layer: 0
   m_Name: Lava Shark
   m_TagString: Untagged
@@ -151,3 +152,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 2
+--- !u!114 &6681918675172158038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218579580118882133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f64e4915612a5a419f3a1be2e24c291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAudioClip: {fileID: 8300000, guid: efd1e5aa48fbd5a449e857d7e85c7711, type: 3}
+  collisionAudioClip: {fileID: 8300000, guid: b8eceb2e91bdae3438eeb564712a6a74, type: 3}

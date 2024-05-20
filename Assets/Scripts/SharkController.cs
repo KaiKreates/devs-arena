@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SharkController : MonoBehaviour
+
 {
     private Vector3 playerPos;
     public Transform player;
