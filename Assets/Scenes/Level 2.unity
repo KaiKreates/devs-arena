@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731224, g: 0.38074207, b: 0.35872674, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312207, g: 0.3807419, b: 0.35872644, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 803a056c3b624cf4cb52a5b0e48ff870, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -510,6 +510,9 @@ MonoBehaviour:
   verticalFrequency: 0
   horizontalAmplitude: 5
   horizontalFrequency: 1.5
+  forwardAmplitude: 0.5
+  forwardFrequency: 2
+  startDelay: 0
 --- !u!1 &718275816
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1430a240935b2484c857d49fecf3165f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}
+  levelmanager: {fileID: 0}
 --- !u!1 &1331715478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1093,9 @@ MonoBehaviour:
   verticalFrequency: 1
   horizontalAmplitude: 0
   horizontalFrequency: 0
+  forwardAmplitude: 0.5
+  forwardFrequency: 2
+  startDelay: 0
 --- !u!1 &1500736233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1554,9 @@ MonoBehaviour:
   verticalFrequency: 0
   horizontalAmplitude: 5.25
   horizontalFrequency: 0.75
+  forwardAmplitude: 0.5
+  forwardFrequency: 2
+  startDelay: 0
 --- !u!1 &2144845280
 GameObject:
   m_ObjectHideFlags: 0
