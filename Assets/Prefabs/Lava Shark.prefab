@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8572089838529307211}
   - component: {fileID: 7957146875620866685}
   - component: {fileID: 183460178496012773}
+  - component: {fileID: 1832653957346468725}
   m_Layer: 0
   m_Name: Lava Shark
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &673365281474906295
 MeshFilter:
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   fractureRockPrefab: {fileID: 5068972933377450656, guid: 04193367f84528649bd645aa99138ae7, type: 3}
+  gameOverManager: {fileID: 0}
   slowDuration: 2
   swimSpeed: 5
 --- !u!65 &183460178496012773
@@ -122,3 +124,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.772646, y: 6.0223866, z: 13.125141}
   m_Center: {x: 0.08988476, y: 4.5144796, z: -1.229665}
+--- !u!54 &1832653957346468725
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218579580118882133}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 2

@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
             int milliseconds = (int)((elapsedTime * 1000) % 1000); // Adjusted for four-digit milliseconds
 
             // Update the timer text
-            timerText.text = string.Format("{0:00}:{1:00}:{2:0000}", minutes, seconds, milliseconds);
+            timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
         }
     }
 

@@ -1,15 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class RockMove : MonoBehaviour
 {
-    public float verticalAmplitude = 0.5f;  // Height of the floating effect
-    public float verticalFrequency = 2f;    // Speed of the floating effect
-    public float horizontalAmplitude = 0.5f;  // Width of the oscillation effect
-    public float horizontalFrequency = 2f;    // Speed of the oscillation effect
+    public float verticalAmplitude = 0.5f;
+    public float verticalFrequency = 2f;
+    public float horizontalAmplitude = 0.5f;
+    public float horizontalFrequency = 2f;
+    public float forwardAmplitude = 0.5f;
+    public float forwardFrequency = 2f;
 
     private Vector3 startPos;
-    private float yOffset;
-    private float xOffset;
+    private float yOffset, xOffset, zOffset;
+    public float startDelay;
 
     void Start()
     {
@@ -18,15 +21,21 @@ public class RockMove : MonoBehaviour
 
     void Update()
     {
-        // Calculate vertical floating effect
+        StartCoroutine(MoveRock());
+    }
+
+    IEnumerator MoveRock()
+    {
+        yield return new WaitForSeconds(startDelay);
+
         yOffset = Mathf.Sin(Time.time * verticalFrequency) * verticalAmplitude;
 
-        // Calculate horizontal oscillation effect
         xOffset = Mathf.Sin(Time.time * horizontalFrequency) * horizontalAmplitude;
 
-        // Apply both effects to the rock's position
-        transform.position = startPos + new Vector3(xOffset, yOffset, 0);
+        zOffset = Mathf.Sin(Time.time * forwardFrequency) * forwardAmplitude;
 
+        // Apply all effects to the rock's position
+        transform.position = startPos + new Vector3(xOffset, yOffset, zOffset);
 
     }
 

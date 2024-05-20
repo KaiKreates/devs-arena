@@ -37,9 +37,17 @@ public class SharkController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock"))
         {
+            //Check if player is on this rock
+            if(collision.gameObject.transform.childCount > 0)
+            {
+                player.parent = null;
+            }
+
             //Break Rock
             Destroy(collision.gameObject);
-            Instantiate(fractureRockPrefab, collision.transform.position, Quaternion.identity);
+            GameObject fracturedRock = Instantiate(fractureRockPrefab, collision.transform.position, Quaternion.identity);
+            fracturedRock.transform.localScale = collision.transform.localScale;
+
             //slow shark
             swimSpeed = 2;
             StartCoroutine(SlowShark());
@@ -50,8 +58,6 @@ public class SharkController : MonoBehaviour
             //gameover
             Debug.Log("Game Over");
             gameOverManager.ShowGameOverScreen();
-
-
         }
     }
 
