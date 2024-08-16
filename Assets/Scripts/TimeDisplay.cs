@@ -28,7 +28,7 @@ public class TimeDisplay : MonoBehaviour
             int milliseconds = Mathf.FloorToInt((elapsedTime * 1000f) % 1000f);
 
             // Update the time display text
-            timeText.text = "Time Record: " + minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("000");
+            timeText.text = "Time Record: " + minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("0000");
         }
     }
 

@@ -8,6 +8,9 @@ public class PlayerHandler : MonoBehaviour
     public LevelCompleted levelmanager;
     private Timer timer;
 
+    // Flag to track if the level is completed
+    private bool isLevelCompleted = false;
+
     void Start()
     {
         if (gameOverManager == null)
@@ -28,12 +31,19 @@ public class PlayerHandler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Lava"))
         {
-            Debug.Log("Game Over");
-            gameOverManager.ShowGameOverScreen();
+            // Only show Game Over screen if the level is not completed
+            if (!isLevelCompleted)
+            {
+                Debug.Log("Game Over");
+                gameOverManager.ShowGameOverScreen();
+            }
         }
 
         if (other.gameObject.CompareTag("Finish"))
         {
+            // Set the flag to indicate the level is completed
+            isLevelCompleted = true;
+
             // Level Complete Screen
             Debug.Log("Level Complete");
 
@@ -42,6 +52,9 @@ public class PlayerHandler : MonoBehaviour
 
             // Show the level completed screen with the final time
             levelmanager.ShowScreen(finalTime);
+
+            // Hide the timer text
+            timer.HideTimer();
         }
     }
 }

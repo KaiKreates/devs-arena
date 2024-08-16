@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
         // Start the timer when the script starts
         startTime = Time.time;
         isRunning = true;
+        ShowTimer(); // Ensure the timer is visible when starting
     }
 
     void Update()
@@ -27,7 +28,7 @@ public class Timer : MonoBehaviour
             int milliseconds = (int)((elapsedTime * 1000) % 1000);
 
             // Update the timer text
-            timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            timerText.text = string.Format("{0:00}:{1:00}:{2:0000}", minutes, seconds, milliseconds);
         }
     }
 
@@ -42,8 +43,11 @@ public class Timer : MonoBehaviour
         int seconds = (int)(finalTime % 60);
         int milliseconds = (int)((finalTime * 1000) % 1000);
 
+        // Hide the timer text when paused
+        HideTimer();
+
         // Return the final time as a string
-        return string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+        return string.Format("{0:00}:{1:00}:{2:0000}", minutes, seconds, milliseconds);
     }
 
     // Call this method to resume the timer
@@ -51,6 +55,7 @@ public class Timer : MonoBehaviour
     {
         isRunning = true;
         startTime = Time.time - (Time.time - startTime); // Adjust start time to keep the elapsed time correct
+        ShowTimer();
     }
 
     // Call this method to reset the timer
@@ -58,5 +63,18 @@ public class Timer : MonoBehaviour
     {
         startTime = Time.time;
         isRunning = true;
+        ShowTimer();
+    }
+
+    // Method to hide the timer text
+    public void HideTimer()
+    {
+        timerText.gameObject.SetActive(false);
+    }
+
+    // Method to show the timer text
+    public void ShowTimer()
+    {
+        timerText.gameObject.SetActive(true);
     }
 }
